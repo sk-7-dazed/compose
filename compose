@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+
+from main import the_actual_app
+app = the_actual_app()
+app.run()
