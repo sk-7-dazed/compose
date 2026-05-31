@@ -38,22 +38,25 @@ compose was built to provide a calm, keyboard-driven writing experience with a n
 
 ### Platform Support
 
-This application is GTK-native, and is mainly made for GNU/Linux systems. It is developed and tested on:
+This application is GTK-native, and is mainly made for GNU/Linux systems. It is developed on Arch Linux and is supported and tested on:
 
-* Arch Linux
-* GTK4 environments
-* X11 and Wayland
+* Any GNU/Linux Distribution
+* macOS
 
-It may work with other operating systems (like macOS with the appropriate GTK dependencies installed), but this is currently untested.
+It may work on other operating systems as well, but this is currently untested.
+
+> Some keyboard shortcuts are different on macOS. 
 
 ### Requirements
 
 * Python 3.12+
 * GTK4
 * PyGObject
-* *Also, DM Mono is required to render the text in the application, and the editor font itself is also set to DM Mono. System fonts will be available in future versions. Install it [here](https://fonts.google.com/specimen/DM+Mono?preview.script=Latn).*
+* *Also, DM Mono is required to render the UI text in the application, and the editor font itself is also set to DM Mono. System fonts will be available in future versions. Install it [here](https://fonts.google.com/specimen/DM+Mono?preview.script=Latn).*
 
 > *You can use any font of your preference, but it requires editing the source code, since the usage of DM Mono is hard-coded into compose.*
+
+> *While testing on macOS, I found that it does not use DM Mono, but that might just be a macOS quirk.*
 
 ### Clone Repository
 
@@ -67,6 +70,9 @@ Make sure you have `git` installed. Run the following commands in your Terminal:
 #### Arch Linux
 `sudo pacman -S python python-gobject gtk4`
 
+#### macOS (with `homebrew`)
+`brew install python pygobject3 gtk4`
+
 #### Fedora
 `sudo dnf install python3-gobject gtk4`
 
@@ -76,7 +82,9 @@ Make sure you have `git` installed. Run the following commands in your Terminal:
 ### Run compose
 `python main.py` or `./compose`
 
-### Optional: Desktop Integration
+### Optional but Recommended: Desktop Integration
+
+> This section only applies to GNU/Linux desktop environments that support XDG desktop entries.
 
 Create `~/.local/share/applications/compose.desktop` with the following contents:
 
@@ -126,6 +134,8 @@ compose is minimal and some features are intentionally excluded to preserve its 
 ---
 
 ## Screenshots
+
+> Appearance varies from theme to theme. Install and use a GTK4 theme that suits your preferences. Keep in mind that in order for compose to use a dark theme, your GTK4 theme must be dark-themed too.
 
 ### Main editor
 
